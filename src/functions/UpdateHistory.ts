@@ -41,7 +41,7 @@ export async function UpdateHistory(request: HttpRequest, context: InvocationCon
         context.extraOutputs.set(cosmosOutput, history);
         return {
             status: 200,
-            body: JSON.stringify(history),
+            body: JSON.stringify({ id: history.id, history: history.history }),
         };
     }
 };

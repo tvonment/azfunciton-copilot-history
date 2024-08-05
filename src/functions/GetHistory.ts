@@ -24,7 +24,7 @@ export async function GetHistory(request: HttpRequest, context: InvocationContex
     } else {
         return {
             status: 200,
-            body: JSON.stringify(history),
+            body: JSON.stringify({ id: history.id, history: history.history }),
         };
     }
 };
