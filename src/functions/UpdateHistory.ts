@@ -20,8 +20,8 @@ interface History {
 }
 
 interface HistoryItem {
-    name: string;
-    message: string;
+    inputs: { query: string };
+    outputs: { reply: string };
 }
 
 
