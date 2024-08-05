@@ -30,7 +30,7 @@ export async function CreateHistory(request: HttpRequest, context: InvocationCon
 
     context.log(`Created new history item with id: ${newItem.id}`);
 
-    return { body: `Created new history item with id: ${newItem.id}` };
+    return { body: JSON.stringify(newItem) };
 };
 
 app.http('CreateHistory', {
