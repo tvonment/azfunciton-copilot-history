@@ -31,7 +31,7 @@ export async function GetHistory(request: HttpRequest, context: InvocationContex
 
 app.http('GetHistory', {
     methods: ['GET'],
-    authLevel: 'anonymous',
+    authLevel: 'function',
     extraInputs: [cosmosInput],
     handler: GetHistory,
 });

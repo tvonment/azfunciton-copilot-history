@@ -48,7 +48,7 @@ export async function UpdateHistory(request: HttpRequest, context: InvocationCon
 
 app.http('UpdateHistory', {
     methods: ['POST'],
-    authLevel: 'anonymous',
+    authLevel: 'function',
     extraInputs: [cosmosInput],
     extraOutputs: [cosmosOutput],
     handler: UpdateHistory

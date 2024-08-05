@@ -9,7 +9,7 @@ const databaseId = 'copilot';
 const containerId = 'chathistories';
 
 // Define a TypeScript interface for the history item
-interface HistoryItem {
+interface History {
     id: string;
     history: any[];
 }
@@ -18,7 +18,7 @@ export async function CreateHistory(request: HttpRequest, context: InvocationCon
     context.log(`Http function processed request for url "${request.url}"`);
 
     // Create a new history item with a GUID as the identifier
-    const newItem: HistoryItem = {
+    const newItem: History = {
         id: uuidv4(),
         history: []
     };
@@ -35,6 +35,6 @@ export async function CreateHistory(request: HttpRequest, context: InvocationCon
 
 app.http('CreateHistory', {
     methods: ['GET'],
-    authLevel: 'anonymous',
+    authLevel: 'function',
     handler: CreateHistory
 });
